@@ -38,6 +38,8 @@ class Products{
     }
 }
 
+
+
 $products = [
     new Products("Osso di Gomma", 50 . "$", "giocattolo adatto a tutti i cuccioli"),
     new Products("Osso di plastica", 40 . "$", "giocattolo adatto a i cuccioli di almeno 1 anno"),
@@ -50,23 +52,5 @@ foreach($products as $product){
 
 
 
-
-
-
-
-// Toy
-echo "<br><br><br><br> Toys <br><br>";
-include("toy-db.php");
-
-// Dog
-echo "<br><br><br><br> DOG";
-include("dog-db.php");
-
-// Cat
-echo "<br><br><br><br> CAT";
-include("cat-db.php");
-
-// Food
-echo "<br><br><br><br> FOOD";
-include("food-db.php")
+include("db.php");
 ?>
