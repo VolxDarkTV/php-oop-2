@@ -1,41 +1,21 @@
 <?php
-class Dog {
-    private $category;
-    private $dateOfBirth;
-
-    public function __construct($category, $dateOfBirth){
-        $this -> setCategory($category);
-        $this -> setDateOfBirth($dateOfBirth);
-
-    }
-
-    // Category
-    public function getCategory(){
-        return $this -> category;
-    }
-    public function setCategory($category){
-        return $this -> category = $category;
-    }
-
-    // DateOfBirth
-    public function getDateOfBirth(){
-        return $this -> dateOfBirth;
-    }
-    public function setDateOfBirth($dateOfBirth){
-        return $this -> dateOfBirth = $dateOfBirth;
-    }
+include("dog.php");
+include("cat.php");
+include("food.php");
 
 
+// Food
+$foods = [
+    new Food("Croccantissimi", "pane - carne - 55% acqua minerale", "10-06-2036"),
+    new Food("Croccantini", "pane - carne - 70% acqua minerale", "10-06-2026"),
+];
+
+foreach ($foods as $food){
+    echo "<h1>" . $food -> getName() . "</h1>" . "<span>" . $food -> getIngredients() . "</span>" 
+    . "<span>" . $food -> getExpirationDate() . "</span>";
 }
 
-// class Food{
-//     private $name;
-//     private $ingredients;
-//     private $expiration_date;
-
-    
-// }
-
+// Dog
 $dogs = [
     new Dog("Alano", "27-05-2021"), 
     new Dog("Corso", "27-05-2009"), 
@@ -47,4 +27,15 @@ foreach ($dogs as $dog){
     echo "<h1>" . $dog -> getCategory() . "</h1>" . "<span>" . $dog -> getDateOfBirth() . "</span>";
 }
 
+// Cat
+$cats = [
+    new Cat("Siamese", "27-05-2021"), 
+    new Cat("Certosino", "27-05-2009"), 
+    new Cat("Balinese", "27-05-2011"), 
+    new Cat("Persiano", "27-05-2019")
+];
+
+foreach ($cats as $cat){
+    echo "<h1>" . $cat -> getCategory() . "</h1>" . "<span>" . $cat -> getDateOfBirth() . "</span>";
+}
 ?>
