@@ -1,8 +1,8 @@
 <?php
-include("dog.php");
-include("cat.php");
-include("food.php");
-include("toy.php");
+include("models/dog.php");
+include("models/cat.php");
+include("models/food.php");
+include("models/toy.php");
 
 class Products{
     private $name;
