@@ -13,7 +13,7 @@ class Food{
     }
 
      // Name
-     public function getName(){
+    public function getName(){
         return $this -> name;
     }
     public function setName($name){
@@ -36,4 +36,13 @@ class Food{
     
 
 }
+?>
+<?php
+$firstDate  = new DateTime(date('d-m-Y', time()));
+$secondDate = new DateTime("2020-03-04");
+$diff = $firstDate->diff($secondDate);
+
+echo $diff->y . " year, " . $diff->m." months and ".$diff->d." day "; 
+// Total amount of days
+echo $diff->days . " days <br><br><br>";
 ?>
