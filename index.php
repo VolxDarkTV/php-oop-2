@@ -131,23 +131,51 @@ class Toy extends Product{
     }
 }
 
+class Kennel extends Product{
+    private $size;
+
+    public function __construct($name, $price, $weight, $category, $size){
+
+        parent :: __construct($name, $price, $weight, $category);
+
+        $this -> setSize($size);
+    }
+
+    // Size
+    public function getSize(){
+        return $this -> size;
+    }
+    public function setSize($size){
+        $this -> size = $size;
+    }
+
+
+    public function getHtml(){
+        return parent :: getHtml() . "<br>"
+                . $this -> getSize() . "<br>";
+    }
+}
+
 // Instance
 
         // CATEGORY
+    $nullCategory = new Category(null, null);
             // DOG
     $dogCategory = new Category("Dog 1", "desc Dog 1");
             // CAT
     $catCategory = new Category("Cat 1", "desc Cat 1");
 
         // PRODUCT
-    $product = new Product("Treats 1", 10, 200, $catCategory);
+    $product = new Product("Treats 1", 10 . "$", 200 . "g", $catCategory);
 
         // FOOD
-    $food = new Food("Bone 1", 10, 200, $dogCategory, "2026-02-02");
+    $food = new Food("Bone 1", 10 . "$", 200 . "g", $dogCategory, "2026-02-02");
 
         // TOY
-    $toy = new Toy("Ball 1", 5, 10, $dogCategory, "plastic");
+    $toy = new Toy("Ball 1", 5 . "$", 10 . "g", $dogCategory, "plastic");
 
+        // KENNEL
+    $kennel = new Kennel("DogHouse", 120 . "$", 20 . "kg", $dogCategory, "20x20");
 // echo $dogCategory -> getHtml();
 // echo "<br>";
 // echo "<br>";
@@ -158,5 +186,8 @@ echo $food -> getHtml();
 echo "<br>";
 echo "<br>";
 echo $toy -> getHtml();
+echo "<br>";
+echo "<br>";
+echo $kennel -> getHtml();
 
 ?>
